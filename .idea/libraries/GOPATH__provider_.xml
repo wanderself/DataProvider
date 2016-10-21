@@ -1,0 +1,55 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;provider&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../stressTest" />
+      <root url="file://$PROJECT_DIR$/../../../common" />
+      <root url="file://$PROJECT_DIR$/../../../disTcpClient" />
+      <root url="file://$PROJECT_DIR$/../../../disvr" />
+      <root url="file://$PROJECT_DIR$/../../../9fans.net" />
+      <root url="file://$PROJECT_DIR$/../../../testChan" />
+      <root url="file://$PROJECT_DIR$/../../../gree" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../go-fundamental-programming-master" />
+      <root url="file://$PROJECT_DIR$/../../../testHttpSvr" />
+      <root url="file://$PROJECT_DIR$/../../../code.google.com" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../GrihMngTcpClient" />
+      <root url="file://$PROJECT_DIR$/../../../dwzweb" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../echo" />
+      <root url="file://$PROJECT_DIR$/../../../wander" />
+      <root url="file://$PROJECT_DIR$/../../../git.apache.org" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../security" />
+      <root url="file://$PROJECT_DIR$/../../../testFuncParameterPass" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../stressTest" />
+      <root url="file://$PROJECT_DIR$/../../../common" />
+      <root url="file://$PROJECT_DIR$/../../../disTcpClient" />
+      <root url="file://$PROJECT_DIR$/../../../disvr" />
+      <root url="file://$PROJECT_DIR$/../../../9fans.net" />
+      <root url="file://$PROJECT_DIR$/../../../testChan" />
+      <root url="file://$PROJECT_DIR$/../../../gree" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../go-fundamental-programming-master" />
+      <root url="file://$PROJECT_DIR$/../../../testHttpSvr" />
+      <root url="file://$PROJECT_DIR$/../../../code.google.com" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../GrihMngTcpClient" />
+      <root url="file://$PROJECT_DIR$/../../../dwzweb" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../echo" />
+      <root url="file://$PROJECT_DIR$/../../../wander" />
+      <root url="file://$PROJECT_DIR$/../../../git.apache.org" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../security" />
+      <root url="file://$PROJECT_DIR$/../../../testFuncParameterPass" />
+    </SOURCES>
+    <excluded>
+      <root url="file://$PROJECT_DIR$/provider" />
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>
