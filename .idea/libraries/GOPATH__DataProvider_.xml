@@ -48,7 +48,9 @@
       <root url="file://$PROJECT_DIR$/../../../testFuncParameterPass" />
     </SOURCES>
     <excluded>
+      <root url="file://$PROJECT_DIR$/connector" />
       <root url="file://$PROJECT_DIR$/provider" />
+      <root url="file://$PROJECT_DIR$/handle" />
       <root url="file://$PROJECT_DIR$" />
     </excluded>
   </library>

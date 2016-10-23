@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="GOPATH &lt;provider&gt;">
+  <library name="GOPATH &lt;connection&gt;">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../stressTest" />
       <root url="file://$PROJECT_DIR$/../../../common" />
@@ -50,7 +50,6 @@
     <excluded>
       <root url="file://$PROJECT_DIR$/connector" />
       <root url="file://$PROJECT_DIR$/provider" />
-      <root url="file://$PROJECT_DIR$/handle" />
       <root url="file://$PROJECT_DIR$" />
     </excluded>
   </library>
