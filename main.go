@@ -10,10 +10,10 @@ func main() {
 	dat := provider.Hatcher()
 	handle.Log(dat)
 
-	send(dat)
+	sendData(dat)
 }
 
-func send(dat []byte) {
+func sendData(dat []byte) {
 	conn := connector.Connection()
 	handle.Log("connection established!")
 
