@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="GOPATH &lt;DataProvider&gt;">
+  <library name="GOPATH &lt;encrypt&gt;">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../DataProvider" />
       <root url="file://$PROJECT_DIR$/../../../redis_test" />

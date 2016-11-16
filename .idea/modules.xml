@@ -4,8 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DataProvider.iml" filepath="$PROJECT_DIR$/DataProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/connector/connector.iml" filepath="$PROJECT_DIR$/connector/connector.iml" />
-      <module fileurl="file://$PROJECT_DIR$/handle/handle.iml" filepath="$PROJECT_DIR$/handle/handle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/provider/provider.iml" filepath="$PROJECT_DIR$/provider/provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/encrypt/encrypt.iml" filepath="$PROJECT_DIR$/encrypt/encrypt.iml" />
     </modules>
   </component>
 </project>

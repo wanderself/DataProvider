@@ -1,17 +1,18 @@
 package handle
 
 import (
-	"log"
-	"os"
+		"os"
+	"github.com/golang/glog"
 )
 
 func Log(v ...interface{}) {
-	log.Println(v...)
+	glog.Info(v...)
 }
 
 func Err(err error) {
 	if err != nil {
 		Log(err)
+
 		os.Exit(0)
 	}
 }
