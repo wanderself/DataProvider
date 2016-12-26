@@ -2,8 +2,8 @@ package encrypt
 
 import (
 	"fmt"
-	"github.com/wanderself/DataProvider/encrypt"
 	"log"
+	"github.com/wanderself/sliceTest/encrypt"
 )
 
 func test() {
@@ -14,10 +14,10 @@ func test() {
 	org := []byte{126, 126, 3, 149, 170, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 	fmt.Println("元数据：  ", org)
 
-	cipherText := encrypt.AesEncrypt(org, encrypt.GetKey(1))
+	cipherText := AesEncrypt(org, encrypt.GetKey(1))
 	fmt.Println("加密数据： ", cipherText)
 
-	restoreText, err := encrypt.DecryptCommonKey(cipherText)
+	restoreText, err := DecryptCommonKey(cipherText)
 	if err != nil {
 		log.Println(err.Error())
 	}

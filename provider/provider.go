@@ -1,35 +1,76 @@
 package provider
 
 import (
-	"encoding/binary"
 	"github.com/wanderself/DataProvider/encrypt"
+	"fmt"
+	"strconv"
+	"time"
 )
 
 var (
-	RC = []byte{149, 170, 5}
-	STV = []byte{149, 170, 5}
-	AC = []byte{149, 170, 5}
+	RC = []byte{149, 124, 5}
+	STV_cmd1 = []byte{1, 1, 45, 55, 0, 1}
+	STV_cmd31 = []byte{49, 1, 45, 55, 0, 1, 0}
+	STV_cmd34 = []byte{52, 10, 14, 128, 5, 127, 7, 0, 0, 0, 0, 0, 0, 105, 1, 90, 0, 150, 0, 105, 1, 90, 0, 150, 0, 144, 1, 30, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 6, 0}
+	AC_cmd1 = []byte{1, 45, 45, 50, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1}
+	AC_cmd33 = []byte{51, 46, 46, 53, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 0, 33, 0, 1}
+	AC_cmd34 = []byte{52, 47, 47, 54, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 34, 0, 1}
+	//AC_cmd35 = []byte{53, 48, 48, 55, 25, 1, 0, 1, 0, 1, 0, 1, 255, 1, 0, 1, 0, 255, 0, 1, 32, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 255, 0, 1, 0, 1, 0, 255, 0, 1, 0, 1, 0, 35, 0, 1}
+	AC_cmd35 = []byte{53, 48, 48, 55, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 255, 1, 0, 1, 0, 35, 0, 1}
+	AC_cmd44 = []byte{68, 2, 16, 1, 0, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 32, 33, 1, 2, 3, 0}
+	//AC_cmd44 = []byte{68, 2, 16, 1, 0, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 65, 66, 67, 95, 95, 1, 2, 3, 0}
+	test = []byte{159, 126, 154, 222, 21, 32, 57, 177, 230, 147, 190, 11, 167, 190, 218, 186, 32, 124, 187, 5, 204, 119, 58, 203, 123, 164, 182, 22, 223, 102, 103, 0}
 )
 
 func Hatcher(code int) []byte {
 
 	//device mid
 	stvMid := []byte{0, 0, 134, 0}
-	acMid := []byte{0, 1, 0, 1}
+	//acMid := []byte{0, 1, 0, 1}
+	acMid := []byte{0, 1, 16, 2}
 	rcMid := []byte{0, 130, 132, 1}
+	//mac := []byte{244, 145, 30, 16, 175, 239}
 
 	switch code {
+	case 4:
+		dat := datGen(test)
+		bin := binGen(dat)
+		copy(bin[22:26], rcMid)
+		return bin
 	case 3:
-		bin := BinGen(RC)
+		dat := datGen(RC)
+		bin := binGen(dat)
 		copy(bin[22:26], rcMid)
 		return bin
 	case 1:
-		bin := BinGen(STV)
+		dat1 := datGen(STV_cmd1)
+		dat31 := datGen(STV_cmd31)
+		dat34 := datGen(STV_cmd34)
+		dat := make([]byte, len(dat1) + len(dat31) + len(dat34))
+		copy(dat[:len(dat1)], dat1)
+		copy(dat[len(dat1):], dat31)
+		copy(dat[len(dat1) + len(dat31):], dat34)
+		bin := binGen(dat)
 		copy(bin[22:26], stvMid)
+		fmt.Println(bin)
 		return bin
 	case 0:
-		bin := BinGen(AC)
+		dat1 := datGen(AC_cmd1)
+		dat33 := datGen(AC_cmd33)
+		dat34 := datGen(AC_cmd34)
+		dat35 := datGen(AC_cmd35)
+		dat44 := datGen(AC_cmd44)
+		dat := make([]byte, len(dat1) + len(dat33) + len(dat34) + len(dat35) + len(dat44))
+
+		copy(dat[:len(dat1)], dat1)
+		copy(dat[len(dat1):len(dat1) + len(dat33)], dat33)
+		copy(dat[len(dat1) + len(dat33) :len(dat1) + len(dat33) + len(dat34)], dat34)
+		copy(dat[len(dat1) + len(dat33) + len(dat34):len(dat1) + len(dat33) + len(dat34) + len(dat35)], dat35)
+		copy(dat[len(dat1) + len(dat33) + len(dat34) + len(dat35):], dat44)
+		bin := binGen(dat)
 		copy(bin[22:26], acMid)
+		//copy(bin[16:22], mac)
+		fmt.Println(bin)
 		return bin
 	default:
 		jsn := []byte("{\"t\":\"notify\",\"mac\":\"2059a0b4214b\",\"mid\":\"30000\",\"tm\":\"20161230125211\",\"evt\":3,\"code\":21,\"p\":\"Pow\",\"o\":\"1\",\"v\":\"0\",\"msg\":\"sd\"}\n")
@@ -38,15 +79,13 @@ func Hatcher(code int) []byte {
 
 }
 
-func BinGen(datBody []byte) []byte {
-	binHead := []byte{102, 103, 0, 17, 32, 89, 160, 181, 0, 121, 0, 0, 0, 0, 0, 0, 32, 89, 160, 181, 0, 121, 0, 0, 134, 0, 0, 0, 0, 1, 0, 0, 16, 9, 12, 9, 24, 22, 2}
-	datHead := []byte{126, 126}
-	datLen := len(datBody) + 4
-	dat := make([]byte, getLen(datLen))
-	copy(dat[0:2], datHead)
-	dat[2] = byte(len(datBody) + 1)
-	copy(dat[3:datLen], datBody)
-	binHead[3] = byte(len(dat))
+func binGen(dat []byte) []byte {
+	//binHead := []byte{102, 103, 0, 17, 32, 89, 160, 181, 0, 121, 0, 0, 0, 0, 0, 0, 32, 89, 160, 180, 0, 19, 0, 0, 134, 0, 0, 0, 0, 1, 0, 0, 16, 9, 12, 9, 24, 22, 2}
+	binHead := []byte{102, 103, 0, 17, 32, 89, 160, 181, 0, 121, 0, 0, 0, 0, 0, 0, 244, 145, 30, 16, 175, 239, 0, 0, 134, 0, 0, 0, 0, 1, 4, 0, 16, 9, 12, 9, 24, 22, 2}
+	copy(binHead[32:38], tmGen())
+	copy(binHead[16:22], macGen("1a2b3c4d5e6f"))
+	datLen := getLen(len(dat))
+	binHead[3] = byte(datLen)
 	bundle := encrypt.AesEncrypt(dat, encrypt.GetKey(1))
 	bin := make([]byte, len(binHead) + len(bundle))
 	copy(bin, binHead)
@@ -54,22 +93,94 @@ func BinGen(datBody []byte) []byte {
 	return bin
 }
 
+func datGen(datBody []byte) []byte {
+	datHead := []byte{126, 126}
+	datLen := len(datBody) + 3
+	//fmt.Println(len(datBody))
+	//dat := make([]byte, getLen(datLen))
+	dat := make([]byte, datLen)
+	//fmt.Println(dat)
+	copy(dat[0:2], datHead)
+	dat[2] = byte(len(datBody) + 1)
+	//copy(dat[3:datLen], datBody)
+	copy(dat[3:datLen], datBody)
+	return dat
+}
+
 func getLen(len int) int {
 	if len <= 16 {
 		return 16
+	} else if len % 16 == 0 {
+		return len
 	} else {
 		len = (len / 16 + 1) * 16
 		return len
 	}
 }
 
-func intToBytes(i int16) []byte {
-	var buf = make([]byte, 2)
-	binary.BigEndian.PutUint16(buf, uint16(i))
-	return buf
+func tmGen() []byte  {
+
+	tm := make([]byte, 6)
+
+	Y, _ := strconv.Atoi(time.Now().String()[2:4])
+
+	M, _ := strconv.Atoi(time.Now().String()[5:7])
+
+	D, _ := strconv.Atoi(time.Now().String()[8:10])
+
+	h, _ := strconv.Atoi(time.Now().String()[11:13])
+
+	m, _ := strconv.Atoi(time.Now().String()[14:16])
+
+	s, _ := strconv.Atoi(time.Now().String()[17:19])
+
+	tm[0] = byte(Y)
+
+	tm[1] = byte(M)
+
+	tm[2] = byte(D)
+
+	tm[3] = byte(h)
+
+	tm[4] = byte(m)
+
+	tm[5] = byte(s)
+
+	return tm
+
 }
 
+func macGen(s string) []byte {
 
+	mac := make([]byte, 6)
+
+	m1, _ := strconv.ParseInt(s[:2], 16, 8)
+
+	m2, _ := strconv.ParseInt(s[2:4], 16, 8)
+
+	m3, _ := strconv.ParseInt(s[4:6], 16, 8)
+
+	m4, _ := strconv.ParseInt(s[6:8], 16, 8)
+
+	m5, _ := strconv.ParseInt(s[8:10], 16, 8)
+
+	m6, _ := strconv.ParseInt(s[10:12], 16, 8)
+
+	mac[0] = byte(m1)
+
+	mac[1] = byte(m2)
+
+	mac[2] = byte(m3)
+
+	mac[3] = byte(m4)
+
+	mac[4] = byte(m5)
+
+	mac[5] = byte(m6)
+
+	return mac
+
+}
 
 
 
