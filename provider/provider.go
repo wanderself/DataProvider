@@ -8,6 +8,8 @@ import (
 )
 
 var (
+	mac string = "112233445566"
+
 	RC = []byte{149, 124, 5}
 	STV_cmd1 = []byte{1, 1, 45, 55, 0, 1}
 	STV_cmd31 = []byte{49, 1, 45, 55, 0, 1, 0}
@@ -26,17 +28,11 @@ func Hatcher(code int) []byte {
 
 	//device mid
 	stvMid := []byte{0, 0, 134, 0}
-	//acMid := []byte{0, 1, 0, 1}
 	acMid := []byte{0, 1, 16, 2}
 	rcMid := []byte{0, 130, 132, 1}
-	//mac := []byte{244, 145, 30, 16, 175, 239}
 
 	switch code {
-	case 4:
-		dat := datGen(test)
-		bin := binGen(dat)
-		copy(bin[22:26], rcMid)
-		return bin
+
 	case 3:
 		dat := datGen(RC)
 		bin := binGen(dat)
@@ -68,9 +64,10 @@ func Hatcher(code int) []byte {
 		copy(dat[len(dat1) + len(dat33) + len(dat34):len(dat1) + len(dat33) + len(dat34) + len(dat35)], dat35)
 		copy(dat[len(dat1) + len(dat33) + len(dat34) + len(dat35):], dat44)
 		bin := binGen(dat)
+
+		fmt.Println(bin)
 		copy(bin[22:26], acMid)
 		//copy(bin[16:22], mac)
-		fmt.Println(bin)
 		return bin
 	default:
 		jsn := []byte("{\"t\":\"notify\",\"mac\":\"2059a0b4214b\",\"mid\":\"30000\",\"tm\":\"20161230125211\",\"evt\":3,\"code\":21,\"p\":\"Pow\",\"o\":\"1\",\"v\":\"0\",\"msg\":\"sd\"}\n")
@@ -82,14 +79,17 @@ func Hatcher(code int) []byte {
 func binGen(dat []byte) []byte {
 	//binHead := []byte{102, 103, 0, 17, 32, 89, 160, 181, 0, 121, 0, 0, 0, 0, 0, 0, 32, 89, 160, 180, 0, 19, 0, 0, 134, 0, 0, 0, 0, 1, 0, 0, 16, 9, 12, 9, 24, 22, 2}
 	binHead := []byte{102, 103, 0, 17, 32, 89, 160, 181, 0, 121, 0, 0, 0, 0, 0, 0, 244, 145, 30, 16, 175, 239, 0, 0, 134, 0, 0, 0, 0, 1, 4, 0, 16, 9, 12, 9, 24, 22, 2}
+
 	copy(binHead[32:38], tmGen())
-	copy(binHead[16:22], macGen("1a2b3c4d5e6f"))
+	copy(binHead[16:22], macGen(mac))
 	datLen := getLen(len(dat))
 	binHead[3] = byte(datLen)
 	bundle := encrypt.AesEncrypt(dat, encrypt.GetKey(1))
 	bin := make([]byte, len(binHead) + len(bundle))
+
 	copy(bin, binHead)
 	copy(bin[len(binHead):], bundle)
+
 	return bin
 }
 
@@ -118,7 +118,7 @@ func getLen(len int) int {
 	}
 }
 
-func tmGen() []byte  {
+func tmGen() []byte {
 
 	tm := make([]byte, 6)
 
@@ -154,17 +154,17 @@ func macGen(s string) []byte {
 
 	mac := make([]byte, 6)
 
-	m1, _ := strconv.ParseInt(s[:2], 16, 8)
+	m1, _ := strconv.ParseInt(s[:2], 16, 16)
 
-	m2, _ := strconv.ParseInt(s[2:4], 16, 8)
+	m2, _ := strconv.ParseInt(s[2:4], 16, 16)
 
-	m3, _ := strconv.ParseInt(s[4:6], 16, 8)
+	m3, _ := strconv.ParseInt(s[4:6], 16, 16)
 
-	m4, _ := strconv.ParseInt(s[6:8], 16, 8)
+	m4, _ := strconv.ParseInt(s[6:8], 16, 16)
 
-	m5, _ := strconv.ParseInt(s[8:10], 16, 8)
+	m5, _ := strconv.ParseInt(s[8:10], 16, 16)
 
-	m6, _ := strconv.ParseInt(s[10:12], 16, 8)
+	m6, _ := strconv.ParseInt(s[10:12], 16, 16)
 
 	mac[0] = byte(m1)
 
