@@ -1,41 +1,72 @@
 <component name="libraryTable">
   <library name="GOPATH &lt;DataProvider&gt;">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../../DataProvider" />
-      <root url="file://$PROJECT_DIR$/../../../redis_test" />
-      <root url="file://$PROJECT_DIR$/../../../.idea" />
+      <root url="file://$PROJECT_DIR$/../../../DataPaserService" />
+      <root url="file://$PROJECT_DIR$/../../../github.com" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../DataPaserService-go" />
+      <root url="file://$PROJECT_DIR$/../../../crypto" />
       <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
-      <root url="file://$PROJECT_DIR$/../../../common" />
-      <root url="file://$PROJECT_DIR$/../../../wander" />
+      <root url="file://$PROJECT_DIR$/../../../greeGlobal" />
+      <root url="file://$PROJECT_DIR$/../../../testFuncParameterPass" />
+      <root url="file://$PROJECT_DIR$/../../../disTcpClient" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../disvr" />
       <root url="file://$PROJECT_DIR$/../../../9fans.net" />
       <root url="file://$PROJECT_DIR$/../../../gree" />
+      <root url="file://$PROJECT_DIR$/../../../hello" />
       <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
-      <root url="file://$PROJECT_DIR$/../../../datMonitor" />
+      <root url="file://$PROJECT_DIR$/../../../testfunc" />
+      <root url="file://$PROJECT_DIR$/../../../mysqlTest" />
+      <root url="file://$PROJECT_DIR$/../../../testHttpSvr" />
+      <root url="file://$PROJECT_DIR$/../../../pushServer" />
+      <root url="file://$PROJECT_DIR$/../../../redisTest" />
+      <root url="file://$PROJECT_DIR$/../../../grac-go" />
+      <root url="file://$PROJECT_DIR$/../../../GrihMngTcpClient" />
+      <root url="file://$PROJECT_DIR$/../../../dwzweb" />
+      <root url="file://$PROJECT_DIR$/../../../security" />
+      <root url="file://$PROJECT_DIR$/../../../common" />
+      <root url="file://$PROJECT_DIR$/../../../LogSvr" />
+      <root url="file://$PROJECT_DIR$/../../../testChan" />
+      <root url="file://$PROJECT_DIR$/../../../EdgeServer" />
+      <root url="file://$PROJECT_DIR$/../../../StressTest" />
       <root url="file://$PROJECT_DIR$/../../../code.google.com" />
-      <root url="file://$PROJECT_DIR$/../.." />
-      <root url="file://$PROJECT_DIR$/../../../golang.org" />
-      <root url="file://$PROJECT_DIR$/../../../git.apache.org" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../../../DataProvider" />
-      <root url="file://$PROJECT_DIR$/../../../redis_test" />
-      <root url="file://$PROJECT_DIR$/../../../.idea" />
+      <root url="file://$PROJECT_DIR$/../../../DataPaserService" />
+      <root url="file://$PROJECT_DIR$/../../../github.com" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../DataPaserService-go" />
+      <root url="file://$PROJECT_DIR$/../../../crypto" />
       <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
-      <root url="file://$PROJECT_DIR$/../../../common" />
-      <root url="file://$PROJECT_DIR$/../../../wander" />
+      <root url="file://$PROJECT_DIR$/../../../greeGlobal" />
+      <root url="file://$PROJECT_DIR$/../../../testFuncParameterPass" />
+      <root url="file://$PROJECT_DIR$/../../../disTcpClient" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../disvr" />
       <root url="file://$PROJECT_DIR$/../../../9fans.net" />
       <root url="file://$PROJECT_DIR$/../../../gree" />
+      <root url="file://$PROJECT_DIR$/../../../hello" />
       <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
-      <root url="file://$PROJECT_DIR$/../../../datMonitor" />
+      <root url="file://$PROJECT_DIR$/../../../testfunc" />
+      <root url="file://$PROJECT_DIR$/../../../mysqlTest" />
+      <root url="file://$PROJECT_DIR$/../../../testHttpSvr" />
+      <root url="file://$PROJECT_DIR$/../../../pushServer" />
+      <root url="file://$PROJECT_DIR$/../../../redisTest" />
+      <root url="file://$PROJECT_DIR$/../../../grac-go" />
+      <root url="file://$PROJECT_DIR$/../../../GrihMngTcpClient" />
+      <root url="file://$PROJECT_DIR$/../../../dwzweb" />
+      <root url="file://$PROJECT_DIR$/../../../security" />
+      <root url="file://$PROJECT_DIR$/../../../common" />
+      <root url="file://$PROJECT_DIR$/../../../LogSvr" />
+      <root url="file://$PROJECT_DIR$/../../../testChan" />
+      <root url="file://$PROJECT_DIR$/../../../EdgeServer" />
+      <root url="file://$PROJECT_DIR$/../../../StressTest" />
       <root url="file://$PROJECT_DIR$/../../../code.google.com" />
-      <root url="file://$PROJECT_DIR$/../.." />
-      <root url="file://$PROJECT_DIR$/../../../golang.org" />
-      <root url="file://$PROJECT_DIR$/../../../git.apache.org" />
     </SOURCES>
     <excluded>
-      <root url="file://$PROJECT_DIR$" />
       <root url="file://$PROJECT_DIR$/encrypt" />
+      <root url="file://$PROJECT_DIR$" />
       <root url="file://$PROJECT_DIR$/connector" />
     </excluded>
   </library>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="GOPATH &lt;provider&gt;">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../../stressTest" />
+      <root url="file://$PROJECT_DIR$/../../../StressTest" />
       <root url="file://$PROJECT_DIR$/../../../common" />
       <root url="file://$PROJECT_DIR$/../../../disTcpClient" />
       <root url="file://$PROJECT_DIR$/../../../disvr" />
@@ -17,15 +17,14 @@
       <root url="file://$PROJECT_DIR$/../../../dwzweb" />
       <root url="file://$PROJECT_DIR$/../../../golang.org" />
       <root url="file://$PROJECT_DIR$/../../../echo" />
-      <root url="file://$PROJECT_DIR$/../../../wander" />
+      <root url="file://$PROJECT_DIR$/../.." />
       <root url="file://$PROJECT_DIR$/../../../git.apache.org" />
       <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
       <root url="file://$PROJECT_DIR$/../../../security" />
       <root url="file://$PROJECT_DIR$/../../../testFuncParameterPass" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../../../stressTest" />
+      <root url="file://$PROJECT_DIR$/../../../StressTest" />
       <root url="file://$PROJECT_DIR$/../../../common" />
       <root url="file://$PROJECT_DIR$/../../../disTcpClient" />
       <root url="file://$PROJECT_DIR$/../../../disvr" />
@@ -41,7 +40,7 @@
       <root url="file://$PROJECT_DIR$/../../../dwzweb" />
       <root url="file://$PROJECT_DIR$/../../../golang.org" />
       <root url="file://$PROJECT_DIR$/../../../echo" />
-      <root url="file://$PROJECT_DIR$/../../../wander" />
+      <root url="file://$PROJECT_DIR$/../.." />
       <root url="file://$PROJECT_DIR$/../../../git.apache.org" />
       <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
       <root url="file://$PROJECT_DIR$/../../../security" />

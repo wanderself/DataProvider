@@ -1,0 +1,34 @@
+[2017-04-22 15:04:57,501] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2017-04-22 15:04:57,502] WARN Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.net.ConnectException: Connection refused
+        at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+        at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+        at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+        at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+[2017-04-22 15:04:57,992] INFO Terminate ZkClient event thread. (org.I0Itec.zkclient.ZkEventThread)
+[2017-04-22 15:04:58,602] INFO Opening socket connection to server localhost/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2017-04-22 15:04:58,704] INFO Session: 0x0 closed (org.apache.zookeeper.ZooKeeper)
+[2017-04-22 15:04:58,704] INFO EventThread shut down (org.apache.zookeeper.ClientCnxn)
+[2017-04-22 15:04:58,705] FATAL Fatal error during KafkaServer startup. Prepare to shutdown (kafka.server.KafkaServer)
+org.I0Itec.zkclient.exception.ZkTimeoutException: Unable to connect to zookeeper server within timeout: 6000
+        at org.I0Itec.zkclient.ZkClient.connect(ZkClient.java:1232)
+        at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:156)
+        at org.I0Itec.zkclient.ZkClient.<init>(ZkClient.java:130)
+        at kafka.utils.ZkUtils$.createZkClientAndConnection(ZkUtils.scala:75)
+        at kafka.utils.ZkUtils$.apply(ZkUtils.scala:57)
+        at kafka.server.KafkaServer.initZk(KafkaServer.scala:294)
+        at kafka.server.KafkaServer.startup(KafkaServer.scala:180)
+        at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:37)
+        at kafka.Kafka$.main(Kafka.scala:73)
+        at kafka.Kafka.main(Kafka.scala)
+[2017-04-22 15:04:58,705] INFO shutting down (kafka.server.KafkaServer)
+[2017-04-22 15:04:58,709] INFO shut down completed (kafka.server.KafkaServer)
+
+[greejsj@Slave07 ~]$ zookeeper-server start
+JMX enabled by default
+Using config: /opt/ZDH/parcels/lib/zookeeper/bin/../etc/zookeeper/zoo.cfg
+grep: /opt/ZDH/parcels/lib/zookeeper/bin/../etc/zookeeper/zoo.cfg: No such file or directory
+grep: /opt/ZDH/parcels/lib/zookeeper/bin/../etc/zookeeper/zoo.cfg: No such file or directory
+mkdir: cannot create directory `': No such file or directory
+Starting zookeeper ... /opt/ZDH/parcels/lib/zookeeper/bin/zkServer.sh: line 132: /zookeeper_server.pid: Permission denied
+FAILED TO WRITE PID
